@@ -1,0 +1,59 @@
+﻿name: Projeto Pagamentos - Manual
+
+on:
+
+  push:
+    branches:
+      - main
+
+  workflow_dispatch:
+
+  schedule:
+    - cron: '0 12 * * 1'
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Instalar Dependências
+        run: npm install
+
+  testes:
+
+    needs: build
+
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Instalar Dependências
+        run: npm install
+
+      - name: Executar Testes
+        run: npm test
+
+      - name: Publicar Relatório
+        uses: actions/upload-artifact@v4
+        with:
+          name: relatorio-testes
+          path: reports/

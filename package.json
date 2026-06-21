@@ -3,12 +3,13 @@
   "version": "1.0.0",
   "description": "Trabalho da pós graduação",
   "main": "index.js",
-  "scripts": {
-    "test": "mocha"
-  },
+"scripts": {
+  "test": "mocha test/**/*.js --reporter mochawesome --reporter-options reportDir=reports,reportFilename=resultado"
+},
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "mocha": "^10.2.0"
+    "mocha": "^11.7.6",
+    "mochawesome": "^7.1.4"
   }
 }
