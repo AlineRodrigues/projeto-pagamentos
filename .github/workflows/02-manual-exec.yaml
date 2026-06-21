@@ -1,4 +1,4 @@
-﻿name: Projeto Pagamentos - Manual
+﻿name: Projeto Pagamentos - Execução Manual
 
 on:
   workflow_dispatch:
