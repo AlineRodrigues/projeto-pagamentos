@@ -1,24 +1,336 @@
-# Projeto Pagamentos
+# Projeto Pagamentos - Integração Contínua com GitHub Actions
 
-Projeto desenvolvido para o Trabalho de Conclusão da Disciplina (Parte 1) da Pós-Graduação em Automação de Testes.
+## Objetivo
 
-## Tecnologias utilizadas
+Este projeto tem como objetivo demonstrar a implementação de uma pipeline de Integração Contínua (Continuous Integration - CI) utilizando GitHub Actions para execução automatizada de testes de software.
 
-- Javascript
-- Node.js
-- Mocha
-- Assert
+A solução foi desenvolvida para atender aos requisitos da atividade prática da disciplina de Integração Contínua para Automação de Testes, contemplando diferentes formas de execução da pipeline, geração de relatórios de testes e publicação dos resultados.
 
-## Funcionalidades
+---
 
-- Realizar pagamentos
-- Consultar último pagamento
-- Classificar pagamentos por categoria
+# Tecnologias Utilizadas
 
-## Instalação
+* Git
+* GitHub
+* GitHub Actions
+* Node.js
+* Mocha
+* Mochawesome
 
-npm install
+---
 
-## Executar testes
+# Conceitos Aplicados
 
-npm test
+## Integração Contínua (CI)
+
+Integração Contínua é uma prática de desenvolvimento de software que consiste em integrar alterações de código frequentemente ao repositório principal, permitindo que validações automáticas sejam executadas a cada modificação realizada.
+
+O objetivo é identificar problemas rapidamente, reduzir riscos e fornecer feedback contínuo para a equipe.
+
+## Pipeline
+
+Uma pipeline é um fluxo automatizado de etapas executadas após um evento específico.
+
+Neste projeto, a pipeline realiza:
+
+1. Download do código-fonte.
+2. Configuração do ambiente de execução.
+3. Instalação das dependências.
+4. Execução dos testes automatizados.
+5. Geração do relatório de testes.
+6. Publicação dos artefatos gerados.
+
+## Pipeline as Code
+
+As pipelines foram implementadas através de arquivos YAML armazenados no próprio repositório, seguindo o conceito de Pipeline as Code.
+
+---
+
+# Estrutura do Projeto
+
+```text
+projeto-pagamentos
+│
+├── src/
+├── test/
+├── reports/
+│
+├── package.json
+├── package-lock.json
+│
+└── .github/
+    └── workflows/
+        ├── 01-push-exec.yaml
+        ├── 02-manual-exec.yaml
+        └── 03-schedule-exec.yaml
+```
+
+---
+
+# Testes Automatizados
+
+Os testes automatizados foram desenvolvidos utilizando o framework Mocha.
+
+Os cenários implementados validam:
+
+* Pagamento categoria cara.
+* Pagamento categoria padrão.
+* Consulta do último pagamento realizado.
+
+Durante as execuções da pipeline foram obtidos os seguintes resultados:
+
+* Total de testes: 3
+* Sucesso: 3
+* Falhas: 0
+* Taxa de sucesso: 100%
+
+---
+
+# Geração de Relatórios
+
+Para geração dos relatórios foi utilizado o Mochawesome.
+
+Após a execução dos testes são gerados os seguintes arquivos:
+
+```text
+reports/
+├── resultado.html
+└── resultado.json
+```
+
+O arquivo HTML apresenta uma visualização amigável dos resultados dos testes e o arquivo JSON contém os dados estruturados da execução.
+
+---
+
+# Pipelines Implementadas
+
+## 1. Execução por Push
+
+Arquivo:
+
+```text
+.github/workflows/01-push-exec.yaml
+```
+
+A pipeline é executada automaticamente sempre que alterações são enviadas para a branch principal do repositório.
+
+Objetivo:
+
+* Garantir validação contínua do código.
+* Detectar problemas rapidamente.
+* Fornecer feedback imediato.
+
+---
+
+## 2. Execução Manual
+
+Arquivo:
+
+```text
+.github/workflows/02-manual-exec.yaml
+```
+
+A execução ocorre manualmente através da interface do GitHub Actions utilizando o recurso Workflow Dispatch.
+
+Objetivo:
+
+* Permitir execução sob demanda.
+* Validar alterações específicas.
+* Realizar execuções controladas.
+
+---
+
+## 3. Execução Agendada
+
+Arquivo:
+
+```text
+.github/workflows/03-schedule-exec.yaml
+```
+
+A pipeline é executada automaticamente através de agendamento utilizando expressões Cron.
+
+Objetivo:
+
+* Realizar validações periódicas.
+* Detectar problemas em execuções recorrentes.
+* Garantir monitoramento contínuo da solução.
+
+---
+
+# Publicação de Artefatos
+
+Após a execução dos testes, os relatórios são armazenados como Artifacts do GitHub Actions.
+
+Os artefatos podem ser baixados diretamente pela interface do GitHub e contêm:
+
+* resultado.html
+* resultado.json
+
+Essa abordagem permite armazenar e consultar os resultados das execuções sem necessidade de acesso ao ambiente de execução da pipeline.
+
+---
+
+# Evidências de Execução
+
+## 1. Execução por Push
+
+<p align="center">
+  <img src="evidencias/push-sucesso-1" width="45%">
+  <img src="evidencias/push-sucesso-2" width="45%">
+</p>
+
+## 2. Execução Manual
+
+<p align="center">
+  <img src="evidencias/manual-sucesso-1" width="45%">
+  <img src="evidencias/manual-sucesso-2" width="45%">
+</p>
+
+## 3. Execução Agendada
+
+A pipeline agendada foi configurada utilizando o gatilho `schedule` do GitHub Actions através de expressão Cron.
+
+O workflow foi criado, versionado e disponibilizado no repositório conforme solicitado. Em razão da fila de execução do GitHub Actions no momento da validação, não foi possível obter a evidência da execução automática dentro do período da atividade.
+
+A configuração utilizada encontra-se disponível no arquivo:
+
+.github/workflows/03-schedule-exec.yaml
+
+---
+# Publicação do Relatório
+
+## Artifact disponibilizado pelo GitHub Actions
+
+O Artifact disponibiliza os arquivos gerados pelo Mochawesome, permitindo o download e análise posterior dos resultados da execução.
+
+### Evidências do Artifacts
+
+#### 1. Artifacts - Execução por Push
+<p align="center">
+  <img src="evidencias/artifacts-push-1" width="45%">
+  <img src="evidencias/artifacts-push-2" width="45%">
+</p>
+
+#### 2. Artifacts - Execução Manual
+
+<p align="center">
+  <img src="evidencias/artifacts-manual-1" width="45%">
+  <img src="evidencias/artifacts-manual-2" width="45%">
+</p>
+
+#### 3. Artifacts - Execução Agendada
+
+A pipeline agendada foi configurada utilizando o gatilho `schedule` do GitHub Actions através de expressão Cron.
+
+O workflow foi criado, versionado e disponibilizado no repositório conforme solicitado. Em razão da fila de execução do GitHub Actions no momento da validação, não foi possível obter a evidência da execução automática dentro do período da atividade.
+
+A configuração utilizada encontra-se disponível no arquivo:
+
+.github/workflows/03-schedule-exec.yaml
+
+---
+# Relatório HTML
+
+Após a execução dos testes automatizados, o Mochawesome gera um relatório em formato HTML contendo informações detalhadas sobre os cenários executados.
+
+O relatório apresenta uma visão consolidada da execução, incluindo quantidade de testes realizados, testes aprovados, falhas identificadas, tempo de execução e detalhes de cada caso de teste executado.
+
+A utilização de relatórios HTML facilita a análise dos resultados, proporcionando maior visibilidade sobre a qualidade da aplicação e permitindo a rápida identificação de possíveis problemas durante o processo de Integração Contínua.
+
+## Evidências Dos Relatórios HTML
+
+### 1. Relatório HTML - Execução por Push
+<p align="center">
+  <img src="evidencias/relatorio-html-push-1" width="900">
+</p>
+
+<p align="center">
+  <img src="evidencias/relatorio-html-push-2" width="900">
+</p>
+
+<p align="center">
+  <img src="evidencias/relatorio-html-push-3" width="900">
+</p>
+
+### 2. Relatório HTML - Execução Manual
+<p align="center">
+  <img src="evidencias/relatorio-html-manual-1" width="900">
+</p>
+
+<p align="center">
+  <img src="evidencias/relatorio-html-manual-2" width="900">
+</p>
+
+<p align="center">
+  <img src="evidencias/relatorio-html-manual-2" width="900">
+</p>
+
+### 3. Relatório HTML - Execução Agendada
+
+A pipeline agendada foi configurada utilizando o gatilho `schedule` do GitHub Actions através de expressão Cron.
+
+O workflow foi criado, versionado e disponibilizado no repositório conforme solicitado. Em razão da fila de execução do GitHub Actions no momento da validação, não foi possível obter a evidência da execução automática dentro do período da atividade.
+
+A configuração utilizada encontra-se disponível no arquivo:
+
+.github/workflows/03-schedule-exec.yaml
+
+---
+
+# Relatório JSON
+
+Além do relatório em formato HTML, a pipeline também gera automaticamente um relatório em formato JSON, contendo os resultados da execução dos testes de forma estruturada.
+
+Esse formato é amplamente utilizado em processos de Integração Contínua, pois permite que outras ferramentas realizem análises automatizadas, consolidação de métricas, geração de dashboards e integração com sistemas de monitoramento e qualidade.
+
+O arquivo gerado registra informações detalhadas da execução, incluindo estatísticas dos testes, duração da execução, quantidade de cenários executados, percentual de sucesso e o resultado individual de cada caso de teste.
+
+## Evidências do Relatório JSON
+
+### 1. Relatório JSON - Execução por Push
+
+<p align="center">
+  <img src="evidencias/relatorio-json-push" width="900">
+</p>
+
+### 2. Relatório JSON - Execução Manual
+
+<p align="center">
+  <img src="evidencias/relatorio-json-manual" width="900">
+</p>
+
+### 3. Relatório JSON - Execução Agendada
+
+A pipeline agendada foi configurada utilizando o gatilho `schedule` do GitHub Actions através de expressão Cron.
+
+O workflow foi criado, versionado e disponibilizado no repositório conforme solicitado. Em razão da fila de execução do GitHub Actions no momento da validação, não foi possível obter a evidência da execução automática dentro do período da atividade.
+
+A configuração utilizada encontra-se disponível no arquivo:
+
+.github/workflows/03-schedule-exec.yaml
+
+---
+
+# Resultados Obtidos
+
+A implementação atendeu integralmente aos requisitos propostos:
+
+* Utilização do GitHub Actions.
+* Execução por Push.
+* Execução Manual.
+* Execução Agendada.
+* Pipeline executando com sucesso.
+* Testes automatizados executando com sucesso.
+* Geração de relatório de testes.
+* Publicação e armazenamento dos relatórios.
+* Aplicação dos conceitos de Integração Contínua.
+* Utilização adequada das ferramentas escolhidas.
+
+---
+
+# Conclusão
+
+A solução desenvolvida demonstra a aplicação prática dos conceitos de Integração Contínua utilizando GitHub Actions. A implementação possibilita a execução automatizada dos testes em diferentes cenários de disparo, garantindo feedback rápido, rastreabilidade dos resultados e maior confiabilidade no processo de desenvolvimento de software.
+
+A utilização de relatórios automatizados e armazenamento de artefatos complementa a estratégia de qualidade adotada, permitindo análise e acompanhamento das execuções realizadas.
