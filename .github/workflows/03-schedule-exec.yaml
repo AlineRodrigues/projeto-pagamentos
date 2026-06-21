@@ -1,0 +1,33 @@
+﻿name: Projeto Pagamentos - Execucao Agendada
+
+on:
+  schedule:
+    - cron: '*/5 * * * *'
+
+jobs:
+
+  testes:
+
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24.x
+
+      - name: Instalar Dependencias
+        run: npm install
+
+      - name: Executar Testes
+        run: npm test
+
+      - name: Publicar Relatorio
+        uses: actions/upload-artifact@v4
+        with:
+          name: relatorio-schedule
+          path: reports/
