@@ -209,13 +209,10 @@ As imagens apresentadas a seguir documentam cada etapa do processo e servem como
 
 ### 3. Execução Agendada
 
-A pipeline agendada foi configurada utilizando o gatilho `schedule` do GitHub Actions através de expressão Cron.
-
-O workflow foi criado, versionado e disponibilizado no repositório conforme solicitado. Em razão da fila de execução do GitHub Actions no momento da validação, não foi possível obter a evidência da execução automática dentro do período da atividade.
-
-A configuração utilizada encontra-se disponível no arquivo:
-
-.github/workflows/03-schedule-exec.yaml
+<p align="center">
+  <img src="./evidencias/agendada-sucesso-1.png" width="45%">
+  <img src="./evidencias/agendada-sucesso-2.png" width="45%">
+</p>
 
 ---
 # Publicação do Relatório
@@ -248,13 +245,10 @@ A utilização de Artifacts garante rastreabilidade, preservação dos resultado
 
 ### 3. Artifacts - Execução Agendada
 
-A pipeline agendada foi configurada utilizando o gatilho `schedule` do GitHub Actions através de expressão Cron.
-
-O workflow foi criado, versionado e disponibilizado no repositório conforme solicitado. Em razão da fila de execução do GitHub Actions no momento da validação, não foi possível obter a evidência da execução automática dentro do período da atividade.
-
-A configuração utilizada encontra-se disponível no arquivo:
-
-.github/workflows/03-schedule-exec.yaml
+<p align="center">
+  <img src="./evidencias/artifacts-agendada-1.png" width="45%">
+  <img src="./evidencias/artifacts-agendada-2.png" width="45%">
+</p>
 
 ---
 # Relatório HTML
@@ -290,18 +284,22 @@ A utilização de relatórios HTML facilita a análise dos resultados, proporcio
 </p>
 
 <p align="center">
-  <img src="./evidencias/relatorio-html-manual-2.png" width="900">
+  <img src="./evidencias/relatorio-html-manual-3.png" width="900">
 </p>
 
 ### 3. Relatório HTML - Execução Agendada
 
-A pipeline agendada foi configurada utilizando o gatilho `schedule` do GitHub Actions através de expressão Cron.
+<p align="center">
+  <img src="./evidencias/relatorio-html-agendada-1.png" width="900">
+</p>
 
-O workflow foi criado, versionado e disponibilizado no repositório conforme solicitado. Em razão da fila de execução do GitHub Actions no momento da validação, não foi possível obter a evidência da execução automática dentro do período da atividade.
+<p align="center">
+  <img src="./evidencias/relatorio-html-agendada-2.png" width="900">
+</p>
 
-A configuração utilizada encontra-se disponível no arquivo:
-
-.github/workflows/03-schedule-exec.yaml
+<p align="center">
+  <img src="./evidencias/relatorio-html-agendada-3.png" width="900">
+</p>
 
 ---
 
@@ -329,13 +327,9 @@ O arquivo gerado registra informações detalhadas da execução, incluindo esta
 
 ### 3. Relatório JSON - Execução Agendada
 
-A pipeline agendada foi configurada utilizando o gatilho `schedule` do GitHub Actions através de expressão Cron.
-
-O workflow foi criado, versionado e disponibilizado no repositório conforme solicitado. Em razão da fila de execução do GitHub Actions no momento da validação, não foi possível obter a evidência da execução automática dentro do período da atividade.
-
-A configuração utilizada encontra-se disponível no arquivo:
-
-.github/workflows/03-schedule-exec.yaml
+<p align="center">
+  <img src="./evidencias/relatorio-json-agendada.png" width="900">
+</p>
 
 ---
 
@@ -361,3 +355,22 @@ A implementação atendeu integralmente aos requisitos propostos:
 A solução desenvolvida demonstra a aplicação prática dos conceitos de Integração Contínua utilizando GitHub Actions. A implementação possibilita a execução automatizada dos testes em diferentes cenários de disparo, garantindo feedback rápido, rastreabilidade dos resultados e maior confiabilidade no processo de desenvolvimento de software.
 
 A utilização de relatórios automatizados e armazenamento de artefatos complementa a estratégia de qualidade adotada, permitindo análise e acompanhamento das execuções realizadas.
+
+---
+
+# Repositório do Projeto
+
+O código-fonte, as pipelines de Integração Contínua, os testes automatizados e a documentação desta atividade estão disponíveis no repositório GitHub abaixo:
+
+URL do Repositório:
+
+https://github.com/AlineRodrigues/projeto-pagamentos
+
+O repositório contém:
+
+Código-fonte da aplicação;
+Testes automatizados utilizando Mocha;
+Relatórios gerados pelo Mochawesome;
+Workflows do GitHub Actions;
+Evidências das execuções realizadas;
+Documentação completa da solução implementada.
