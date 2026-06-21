@@ -176,15 +176,15 @@ Essa abordagem permite armazenar e consultar os resultados das execuções sem n
 ## 1. Execução por Push
 
 <p align="center">
-  <img src="evidencias/push-sucesso-1" width="45%">
-  <img src="evidencias/push-sucesso-2" width="45%">
+  <img src="./evidencias/push-sucesso-1.png" width="45%">
+  <img src="./evidencias/push-sucesso-2.png" width="45%">
 </p>
 
 ## 2. Execução Manual
 
 <p align="center">
-  <img src="evidencias/manual-sucesso-1" width="45%">
-  <img src="evidencias/manual-sucesso-2" width="45%">
+  <img src="./evidencias/manual-sucesso-1.png" width="45%">
+  <img src="./evidencias/manual-sucesso-2.png" width="45%">
 </p>
 
 ## 3. Execução Agendada
@@ -208,15 +208,15 @@ O Artifact disponibiliza os arquivos gerados pelo Mochawesome, permitindo o down
 
 #### 1. Artifacts - Execução por Push
 <p align="center">
-  <img src="evidencias/artifacts-push-1" width="45%">
-  <img src="evidencias/artifacts-push-2" width="45%">
+  <img src="./evidencias/artifacts-push-1.png" width="45%">
+  <img src="./evidencias/artifacts-push-2.png" width="45%">
 </p>
 
 #### 2. Artifacts - Execução Manual
 
 <p align="center">
-  <img src="evidencias/artifacts-manual-1" width="45%">
-  <img src="evidencias/artifacts-manual-2" width="45%">
+  <img src="./evidencias/artifacts-manual-1.png" width="45%">
+  <img src="./evidencias/artifacts-manual-2.png" width="45%">
 </p>
 
 #### 3. Artifacts - Execução Agendada
@@ -242,28 +242,28 @@ A utilização de relatórios HTML facilita a análise dos resultados, proporcio
 
 ### 1. Relatório HTML - Execução por Push
 <p align="center">
-  <img src="evidencias/relatorio-html-push-1" width="900">
+  <img src="./evidencias/relatorio-html-push-1.png" width="900">
 </p>
 
 <p align="center">
-  <img src="evidencias/relatorio-html-push-2" width="900">
+  <img src="./evidencias/relatorio-html-push-2.png" width="900">
 </p>
 
 <p align="center">
-  <img src="evidencias/relatorio-html-push-3" width="900">
+  <img src="./evidencias/relatorio-html-push-3.png" width="900">
 </p>
 
 ### 2. Relatório HTML - Execução Manual
 <p align="center">
-  <img src="evidencias/relatorio-html-manual-1" width="900">
+  <img src="./evidencias/relatorio-html-manual-1.png" width="900">
 </p>
 
 <p align="center">
-  <img src="evidencias/relatorio-html-manual-2" width="900">
+  <img src="./evidencias/relatorio-html-manual-2.png" width="900">
 </p>
 
 <p align="center">
-  <img src="evidencias/relatorio-html-manual-2" width="900">
+  <img src="./evidencias/relatorio-html-manual-2.png" width="900">
 </p>
 
 ### 3. Relatório HTML - Execução Agendada
@@ -291,13 +291,13 @@ O arquivo gerado registra informações detalhadas da execução, incluindo esta
 ### 1. Relatório JSON - Execução por Push
 
 <p align="center">
-  <img src="evidencias/relatorio-json-push" width="900">
+  <img src="./evidencias/relatorio-json-push.png" width="900">
 </p>
 
 ### 2. Relatório JSON - Execução Manual
 
 <p align="center">
-  <img src="evidencias/relatorio-json-manual" width="900">
+  <img src="./evidencias/relatorio-json-manual.png" width="900">
 </p>
 
 ### 3. Relatório JSON - Execução Agendada
