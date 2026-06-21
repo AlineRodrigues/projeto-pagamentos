@@ -173,21 +173,41 @@ Essa abordagem permite armazenar e consultar os resultados das execuções sem n
 
 # Evidências de Execução
 
-## 1. Execução por Push
+Esta seção apresenta as evidências coletadas durante a validação das pipelines de Integração Contínua desenvolvidas com GitHub Actions.
+
+Os registros demonstram o correto funcionamento dos diferentes gatilhos configurados (Push, Manual e Schedule), bem como a execução dos testes automatizados, a geração dos relatórios e a publicação dos artefatos produzidos pela pipeline.
+
+As evidências foram obtidas diretamente da interface do GitHub Actions e dos relatórios gerados durante as execuções, permitindo comprovar o atendimento dos requisitos propostos para a atividade.
+
+Os resultados apresentados confirmam:
+
+Execução automática da pipeline por meio de Push;
+Execução manual utilizando Workflow Dispatch;
+Configuração da execução agendada utilizando Schedule (Cron);
+Execução bem-sucedida dos testes automatizados;
+Geração dos relatórios HTML e JSON;
+Publicação e armazenamento dos relatórios como Artifacts;
+Disponibilização dos resultados para consulta e download.
+
+As imagens apresentadas a seguir documentam cada etapa do processo e servem como comprovação da implementação da solução proposta.
+
+## Evidências Da Execução Da Pipeline Através DO GitHub
+
+### 1. Execução por Push
 
 <p align="center">
   <img src="./evidencias/push-sucesso-1.png" width="45%">
   <img src="./evidencias/push-sucesso-2.png" width="45%">
 </p>
 
-## 2. Execução Manual
+### 2. Execução Manual
 
 <p align="center">
   <img src="./evidencias/manual-sucesso-1.png" width="45%">
   <img src="./evidencias/manual-sucesso-2.png" width="45%">
 </p>
 
-## 3. Execução Agendada
+### 3. Execução Agendada
 
 A pipeline agendada foi configurada utilizando o gatilho `schedule` do GitHub Actions através de expressão Cron.
 
@@ -200,26 +220,33 @@ A configuração utilizada encontra-se disponível no arquivo:
 ---
 # Publicação do Relatório
 
-## Artifact disponibilizado pelo GitHub Actions
+Após a execução dos testes automatizados, os relatórios gerados pelo Mochawesome são publicados automaticamente como Artifacts do GitHub Actions.
 
-O Artifact disponibiliza os arquivos gerados pelo Mochawesome, permitindo o download e análise posterior dos resultados da execução.
+Os Artifacts permitem armazenar os resultados da execução da pipeline, possibilitando o download e a análise posterior dos relatórios sem a necessidade de acessar diretamente o ambiente de execução.
 
-### Evidências do Artifacts
+Durante a execução das pipelines implementadas neste projeto, os relatórios foram armazenados com sucesso, contendo os seguintes arquivos:
 
-#### 1. Artifacts - Execução por Push
+resultado.html
+resultado.json
+
+A utilização de Artifacts garante rastreabilidade, preservação dos resultados e maior visibilidade sobre a qualidade da aplicação durante o processo de Integração Contínua.
+
+## Evidências do Artifacts
+
+### 1. Artifacts - Execução por Push
 <p align="center">
   <img src="./evidencias/artifacts-push-1.png" width="45%">
   <img src="./evidencias/artifacts-push-2.png" width="45%">
 </p>
 
-#### 2. Artifacts - Execução Manual
+### 2. Artifacts - Execução Manual
 
 <p align="center">
   <img src="./evidencias/artifacts-manual-1.png" width="45%">
   <img src="./evidencias/artifacts-manual-2.png" width="45%">
 </p>
 
-#### 3. Artifacts - Execução Agendada
+### 3. Artifacts - Execução Agendada
 
 A pipeline agendada foi configurada utilizando o gatilho `schedule` do GitHub Actions através de expressão Cron.
 
